@@ -8,6 +8,7 @@
                 <div class="panel-heading">Register</div>
 
                 <div class="panel-body">
+
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
@@ -69,6 +70,7 @@
                             </div>
                         </div>
                     </form>
+                    <p class="text-center">Admin user email: joy@gmail.com password : 123456</p>
                 </div>
             </div>
         </div>

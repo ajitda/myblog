@@ -58,6 +58,7 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
+                                <p>Admin user email: joy@gmail.com password : 123456</p>
                             </div>
                         </div>
                     </form>

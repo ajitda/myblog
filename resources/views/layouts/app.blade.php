@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/datatable.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
 </head>
 <body>
     <div id="app">
@@ -37,9 +38,11 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     @if(Auth::user())
                     <!-- Left Side Of Navbar -->
+
                     <ul class="nav navbar-nav">
                         <li><a href="{{route('postcategory')}}">Post Category</a></li>
                         <li><a href="{{route('posts.index')}}">Posts</a></li>
+                        <li><a href="{{route('slides.index')}}">Slides</a></li>
                     </ul>
                     @endif
                     <!-- Right Side Of Navbar -->
@@ -76,6 +79,15 @@
 
         @yield('content')
     </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="text-center">&copy; All Rights Reserved By LICT TUP-OFF-H-37 Batch</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

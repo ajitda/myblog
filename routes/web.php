@@ -18,21 +18,29 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('profiles', 'ProfileController');
-Route::get('/postcategory', [
+Route::group(['middleware'=>['checkadmin']], function(){
+	Route::get('/postcategory', [
 	'uses' => 'PostCategoryController@index',
 	'as' => 'postcategory'
-]);
-
-
-Route::post('/postcategory/store', [
+	]);
+	Route::post('/postcategory/store', [
 	'uses' => 'PostCategoryController@store',
 	'as' => 'postcategory.store'
-]);
-
-Route::get('/postcategory/{postcategory}', [
+	]);
+	Route::get('/postcategory/{postcategory}', [
 	'uses' => 'PostCategoryController@show',
 	'as' => 'postcategory.show'
-]);
+	]);
 
-Route::resource('/posts', 'PostController');
+	Route::resource('/posts', 'PostController');
+	Route::resource('/slides', 'SlideController');
+
+});
+Route::resource('profiles', 'ProfileController');
+
+
+
+
+
+
+Route::get('/showpost/{post}', 'FrontController@showpost')->name('showpost');
