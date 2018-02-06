@@ -74,7 +74,8 @@ class SlideController extends Controller
      */
     public function edit($id)
     {
-        //
+        $slide = Slide::findOrFail($id);
+        return view('slides.edit', compact('slide'));
     }
 
     /**
@@ -86,7 +87,14 @@ class SlideController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $slide = Slide::findOrFail($id);
+        $input = $request->all();
+        if($input['image']){
+            $input['image'] = $this->upload($request->image);
+         }
+         
+         $slide->update($input);
+        return redirect('slides');
     }
 
     /**

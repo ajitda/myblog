@@ -20,8 +20,8 @@
 				<tbody>
 					@foreach($posts as $post)
 					<tr>
-						<td>{{$post->id}}</td>
-						<td>{{$post->title}}</td>
+						<td>{{__($post->id)}}</td>
+						<td>{{__($post->title)}}</td>
 						<td><img class="img-responsive" src="{{asset($post->image)}}" alt="" width="100px"></td>
 						<td>{{$post->post_category->name}}</td>
 						<td>{{$post->created_at->toFormattedDateString()}}</td>
